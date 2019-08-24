@@ -20,6 +20,7 @@ namespace FidlyAdvanced2.Controllers
         {
             _context.Dispose();
         }
+
         // GET: Movies
         public ActionResult Index()
         {
