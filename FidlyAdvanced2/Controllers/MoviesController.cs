@@ -1,4 +1,5 @@
 ﻿using FidlyAdvanced2.Models;
+using System.Data.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,13 +25,17 @@ namespace FidlyAdvanced2.Controllers
         // GET: Movies
         public ActionResult Index()
         {
-            var movies = _context.Movies.ToList();
-            /*var movies = new List<Movie>
-            {
-                new Movie { Id = 1, Name = "Aladdin" },
-                new Movie { Id = 2, Name = "Ne Zha" }
-            };*/
+            var movies = _context.Movies.Include(c => c.GenreType).ToList();
             return View(movies);
+        }
+
+        [Route("Movies/Details/{id}")]
+        public ActionResult Details(int? id)
+        {
+            if (id == null)
+                id = 1;
+            var movie = _context.Movies.Include(c => c.GenreType).SingleOrDefault(c => c.Id == id);
+            return View(movie);
         }
     }
 }
