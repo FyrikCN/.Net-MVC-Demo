@@ -1,9 +1,11 @@
-﻿@model FidlyAdvanced2.Models.Customer
+﻿@model FidlyAdvanced2.ViewModels.NewCustomerViewModel
 @{
-    /**/
+                /**/
 
-    ViewBag.Title = "New";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+                /**/
+
+                ViewBag.Title = "New";
+                Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>New Customer</h2>
@@ -11,16 +13,20 @@
 @using (Html.BeginForm("Create", "Customers"))
 {
     <div class="form-group">
-        @Html.LabelFor(c => c.Name)
-        @Html.TextBoxFor(c => c.Name, new { @class = "form-control" })
+        @Html.LabelFor(c => c.Customer.Name)
+        @Html.TextBoxFor(c => c.Customer.Name, new { @class = "form-control" })
     </div>
     <div class="form-group">
-        @Html.LabelFor(c => c.BirthDate)
-        @Html.TextBoxFor(c => c.BirthDate, new { @class = "form-control" })
+        @Html.LabelFor(c => c.Customer.BirthDate)
+        @Html.TextBoxFor(c => c.Customer.BirthDate, new { @class = "form-control" })
     </div>
     <div class="checkbox">
         <label>
-            @Html.CheckBoxFor(c => c.IsSubscribedToNewsletter) Subscribe to the Newsletter
+            @Html.CheckBoxFor(c => c.Customer.IsSubscribedToNewsletter) Subscribe to the Newsletter
         </label>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Customer.MembershipTypeId)
+        @Html.DropDownListFor(c => c.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "MembershipName"), "Select Membership Type", new { @class = "form-control" })
     </div>
 }
