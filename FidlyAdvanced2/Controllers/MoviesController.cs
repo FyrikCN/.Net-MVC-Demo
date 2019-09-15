@@ -37,5 +37,11 @@ namespace FidlyAdvanced2.Controllers
             var movie = _context.Movies.Include(c => c.GenreType).SingleOrDefault(c => c.Id == id);
             return View(movie);
         }
+
+        public ActionResult NewMovie()
+        {
+
+            return View();
+        }
     }
 }
