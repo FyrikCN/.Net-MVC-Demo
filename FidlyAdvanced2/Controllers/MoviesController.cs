@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using FidlyAdvanced2.ViewModels;
 
 namespace FidlyAdvanced2.Controllers
 {
@@ -35,28 +36,38 @@ namespace FidlyAdvanced2.Controllers
             if (id == null)
                 id = 1;
             var movie = _context.Movies.Include(c => c.GenreType).SingleOrDefault(c => c.Id == id);
-            return View(movie);
+            var viewModel = new MovieFormViewModel
+            {
+                Movie = movie,
+                GenreTypes = _context.GenreTypes.ToList()
+            };
+
+            return View("MovieForm", viewModel);
         }
 
-        public ActionResult NewMovie()
+        public ActionResult MovieForm()
         {
             return View();
         }
 
+        [HttpPost]
         public ActionResult Save(Movie movie)
         {
             if (movie.Id == 0)
+            {
+                movie.AddedDate = DateTime.Now;
                 _context.Movies.Add(movie);
+            }
             else
             {
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
                 movieInDb.Name = movie.Name;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
-                movieInDb.GenreType.Name = movie.GenreType.Name;
+                //movieInDb.GenreType.Name = movie.GenreType.Name;
                 movieInDb.NumberInStock = movie.NumberInStock;
             }
             _context.SaveChanges();
-            return View();
+            return RedirectToAction("Index", "Movies");
         }
     }
 }
