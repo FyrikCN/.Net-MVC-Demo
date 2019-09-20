@@ -47,7 +47,12 @@ namespace FidlyAdvanced2.Controllers
 
         public ActionResult MovieForm()
         {
-            return View();
+            var viewModel = new MovieFormViewModel
+            {
+                GenreTypes = _context.GenreTypes.ToList()
+            };
+
+            return View(viewModel);
         }
 
         [HttpPost]
@@ -63,7 +68,7 @@ namespace FidlyAdvanced2.Controllers
                 var movieInDb = _context.Movies.Single(m => m.Id == movie.Id);
                 movieInDb.Name = movie.Name;
                 movieInDb.ReleaseDate = movie.ReleaseDate;
-                //movieInDb.GenreType.Name = movie.GenreType.Name;
+                movieInDb.GenreTypeId = movie.GenreTypeId;
                 movieInDb.NumberInStock = movie.NumberInStock;
             }
             _context.SaveChanges();

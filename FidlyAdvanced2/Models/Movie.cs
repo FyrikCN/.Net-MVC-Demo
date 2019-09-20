@@ -27,6 +27,7 @@ namespace FidlyAdvanced2.Models
 
         public GenreType GenreType { get; set; }
 
+        [Display(Name = "Genre")]
         public int GenreTypeId { get; set; }
     }
 }
