@@ -1,3 +1,5 @@
 Entity Framework is not going to execute the query when the corresponding code is executed. This is called deferred execution. It will be until an iterating. Alternatively, we can use
 var customers = _context.Customers // .ToList();
 to run the query immediately.
+
+Generally, it is a bad practice to put the logic into the HTML.

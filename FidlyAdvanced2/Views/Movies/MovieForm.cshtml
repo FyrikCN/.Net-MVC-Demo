@@ -1,17 +1,10 @@
 ﻿@model FidlyAdvanced2.ViewModels.MovieFormViewModel
 @{
-    ViewBag.Title = "NewMovie";
+    ViewBag.Title = Model.Title;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@if (Model.Movie == null)
-{
-    <h2>New Movie</h2>
-}
-else
-{
-    <h2>Edit Movie</h2>
-}
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm("Save", "Movies"))
 {

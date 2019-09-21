@@ -10,5 +10,13 @@ namespace FidlyAdvanced2.ViewModels
     {
         public IEnumerable<GenreType> GenreTypes { get; set; }
         public Movie Movie { get; set; }
+        public String Title {
+            get
+            {
+                if (Movie != null)
+                    return "Edit Movie";
+                return "New Movie";
+            }
+        }
     }
 }
