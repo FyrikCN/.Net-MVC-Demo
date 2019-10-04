@@ -23,6 +23,7 @@ namespace FidlyAdvanced2.Models
 
         [Required]
         [Display(Name = "Numebr in Stock")]
+        [Range(1, 20)]
         public int NumberInStock { get; set; }
 
         public GenreType GenreType { get; set; }
