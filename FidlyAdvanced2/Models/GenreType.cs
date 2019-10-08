@@ -8,7 +8,7 @@ namespace FidlyAdvanced2.Models
 {
     public class GenreType
     {
-        public int Id { get; set; }
+        public byte Id { get; set; }
         
         [Display(Name = "Genre")]
         public string Name { get; set; }

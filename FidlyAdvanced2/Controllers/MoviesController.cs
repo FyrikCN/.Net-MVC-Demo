@@ -36,9 +36,8 @@ namespace FidlyAdvanced2.Controllers
             if (id == null)
                 id = 1;
             var movie = _context.Movies.Include(c => c.GenreType).SingleOrDefault(c => c.Id == id);
-            var viewModel = new MovieFormViewModel
+            var viewModel = new MovieFormViewModel (movie)
             {
-                Movie = movie,
                 GenreTypes = _context.GenreTypes.ToList()
             };
 
@@ -61,9 +60,8 @@ namespace FidlyAdvanced2.Controllers
         {
             if (!ModelState.IsValid)
             {
-                var viewModel = new MovieFormViewModel
+                var viewModel = new MovieFormViewModel (movie)
                 {
-                    Movie = movie,
                     GenreTypes = _context.GenreTypes
                 };
                 return View("MovieForm", viewModel);

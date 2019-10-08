@@ -287,6 +287,14 @@
     <Compile Include="Migrations\201908290213462_AddForeignKeyAndPopulateValues.Designer.cs">
       <DependentUpon>201908290213462_AddForeignKeyAndPopulateValues.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910080911165_AddedMovieDetailsToMovieFormViewModel.cs" />
+    <Compile Include="Migrations\201910080911165_AddedMovieDetailsToMovieFormViewModel.Designer.cs">
+      <DependentUpon>201910080911165_AddedMovieDetailsToMovieFormViewModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910080917092_ChangedGenreIdToByte.cs" />
+    <Compile Include="Migrations\201910080917092_ChangedGenreIdToByte.Designer.cs">
+      <DependentUpon>201910080917092_ChangedGenreIdToByte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -417,6 +425,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908290213462_AddForeignKeyAndPopulateValues.resx">
       <DependentUpon>201908290213462_AddForeignKeyAndPopulateValues.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910080911165_AddedMovieDetailsToMovieFormViewModel.resx">
+      <DependentUpon>201910080911165_AddedMovieDetailsToMovieFormViewModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910080917092_ChangedGenreIdToByte.resx">
+      <DependentUpon>201910080917092_ChangedGenreIdToByte.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
