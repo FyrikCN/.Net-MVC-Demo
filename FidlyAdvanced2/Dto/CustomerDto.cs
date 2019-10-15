@@ -16,7 +16,7 @@ namespace FidlyAdvanced2.Dto
 
         public bool IsSubscribedToNewsletter { get; set; }
 
-        [Min18YearsIfMember]
+        [Min18YearsIfMemberDto]
         public DateTime? BirthDate { get; set; }
 
         public byte MembershipTypeId { get; set; }
