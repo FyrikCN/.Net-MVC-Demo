@@ -25,9 +25,9 @@ namespace FidlyAdvanced2.Controllers.Api
         }
 
         // Get api/customers
-        public IEnumerable<CustomerDto> GetCustomers()
+        public IHttpActionResult GetCustomers()
         {
-            return _context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>);
+            return Ok(_context.Customers.ToList().Select(Mapper.Map<Customer, CustomerDto>));
         }
 
         // Get api/customers/1
