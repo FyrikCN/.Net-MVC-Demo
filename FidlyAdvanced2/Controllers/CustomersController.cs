@@ -26,9 +26,8 @@ namespace FidlyAdvanced2.Controllers
         public ActionResult New()
         {
             var membershipTypes = _context.MembershipTypes.ToList();
-            var viewModel = new CustomerFormViewModel
+            var viewModel = new CustomerFormViewModel ()
             {
-                Customer = new Customer(),
                 MembershipTypes = membershipTypes
             };
 
@@ -40,9 +39,8 @@ namespace FidlyAdvanced2.Controllers
             var customer = _context.Customers.SingleOrDefault(c => c.Id == id);
             if (customer == null)
                 return HttpNotFound();
-            var viewModel = new CustomerFormViewModel
+            var viewModel = new CustomerFormViewModel (customer)
             {
-                Customer = customer,
                 MembershipTypes = _context.MembershipTypes.ToList()
             };
             return View("CustomerForm", viewModel);
@@ -54,9 +52,8 @@ namespace FidlyAdvanced2.Controllers
         {
             if(!ModelState.IsValid)
             {
-                var viewModel = new CustomerFormViewModel
+                var viewModel = new CustomerFormViewModel (customer)
                 {
-                    Customer = customer,
                     MembershipTypes = _context.MembershipTypes.ToList()
                 };
                 return View("CustomerForm", viewModel);
