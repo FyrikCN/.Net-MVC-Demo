@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace FidlyAdvanced2.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()
