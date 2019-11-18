@@ -26,7 +26,10 @@ namespace FidlyAdvanced2.Controllers
         // GET: Movies
         public ActionResult Index()
         {
-            return View();
+            if (User.IsInRole(RoleName.CanManageMovies))
+                return View("List");
+
+            return View("ReadOnlyList");
         }
 
         [Route("Movies/Details/{id}")]
@@ -43,6 +46,7 @@ namespace FidlyAdvanced2.Controllers
             return View("MovieForm", viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult MovieForm()
         {
             var viewModel = new MovieFormViewModel
