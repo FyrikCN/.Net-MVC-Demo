@@ -17,6 +17,8 @@ namespace FidlyAdvanced2.App_Start
             Mapper.CreateMap<MovieDto, Movie>();
             Mapper.CreateMap<Movie, MovieDto>();
             Mapper.CreateMap<MembershipType, MembershipTypeDto>();
+            Mapper.CreateMap<GenreType, GenreTypeDto>();
+            Mapper.CreateMap<GenreTypeDto, GenreType>();
         }
     }
 }

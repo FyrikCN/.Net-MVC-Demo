@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
+using System.Data.Entity;
 
 namespace FidlyAdvanced2.Controllers.Api
 {
@@ -26,7 +27,9 @@ namespace FidlyAdvanced2.Controllers.Api
         // api/movies
         public IHttpActionResult GetMovies()
         {
-            return Ok(_context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>));
+            return Ok(_context.Movies
+                .Include(m => m.GenreType)
+                .ToList().Select(Mapper.Map<Movie, MovieDto>));
         }
 
         // api/movies/1
@@ -44,6 +47,7 @@ namespace FidlyAdvanced2.Controllers.Api
 
         // api/movies
         [HttpPost]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult CreateMovie(MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -64,6 +68,7 @@ namespace FidlyAdvanced2.Controllers.Api
 
         // api/movies/1
         [HttpPut]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult UpdateMovie(int Id, MovieDto movieDto)
         {
             if (!ModelState.IsValid)
@@ -81,6 +86,7 @@ namespace FidlyAdvanced2.Controllers.Api
 
         // api/movies/1
         [HttpDelete]
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public IHttpActionResult DeleteMovie(int Id)
         {
             var movie = _context.Movies.SingleOrDefault(m => m.Id == Id);

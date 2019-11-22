@@ -24,5 +24,7 @@ namespace FidlyAdvanced2.Dto
         public int NumberInStock { get; set; }
         
         public byte? GenreTypeId { get; set; }
+
+        public GenreTypeDto GenreType { get; set; }
     }
 }

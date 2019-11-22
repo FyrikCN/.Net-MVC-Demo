@@ -257,6 +257,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MoviesController.cs" />
     <Compile Include="Dto\CustomerDto.cs" />
+    <Compile Include="Dto\GenreTypeDto.cs" />
     <Compile Include="Dto\MembershipTypeDto.cs" />
     <Compile Include="Dto\Min18YearsIfMemberDto.cs" />
     <Compile Include="Dto\MovieDto.cs" />
@@ -319,6 +320,10 @@
     <Compile Include="Migrations\201911091038153_SeedUsers.Designer.cs">
       <DependentUpon>201911091038153_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911220219005_AddDrivingLicenseToApplicationUser.cs" />
+    <Compile Include="Migrations\201911220219005_AddDrivingLicenseToApplicationUser.Designer.cs">
+      <DependentUpon>201911220219005_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -328,6 +333,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
@@ -634,6 +640,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911091038153_SeedUsers.resx">
       <DependentUpon>201911091038153_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911220219005_AddDrivingLicenseToApplicationUser.resx">
+      <DependentUpon>201911220219005_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
