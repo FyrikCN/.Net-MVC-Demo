@@ -54,9 +54,9 @@ namespace FidlyAdvanced2
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "271189460534158",
+               appSecret: "11c9c98a0caee32aa7e0453ba8c412f5");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
