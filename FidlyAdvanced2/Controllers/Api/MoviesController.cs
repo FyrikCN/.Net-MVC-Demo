@@ -10,6 +10,7 @@ using System.Data.Entity;
 
 namespace FidlyAdvanced2.Controllers.Api
 {
+    [Authorize(Roles = RoleName.CanManageMovies)]
     public class MoviesController : ApiController
     {
         private ApplicationDbContext _context;

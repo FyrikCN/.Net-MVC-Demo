@@ -324,8 +324,22 @@
     <Compile Include="Migrations\201911220219005_AddDrivingLicenseToApplicationUser.Designer.cs">
       <DependentUpon>201911220219005_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202004300502028_AddPhoneNumberToApplicationUser.cs" />
+    <Compile Include="Migrations\202004300502028_AddPhoneNumberToApplicationUser.Designer.cs">
+      <DependentUpon>202004300502028_AddPhoneNumberToApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004300510556_RemovePhoneNumberFromApplicationUser.cs" />
+    <Compile Include="Migrations\202004300510556_RemovePhoneNumberFromApplicationUser.Designer.cs">
+      <DependentUpon>202004300510556_RemovePhoneNumberFromApplicationUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202004300601101_AddPhoneToApplicationUser.cs" />
+    <Compile Include="Migrations\202004300601101_AddPhoneToApplicationUser.Designer.cs">
+      <DependentUpon>202004300601101_AddPhoneToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\GenreType.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -337,6 +351,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\ExternalLoginConfirmationViewModel.cs" />
     <Compile Include="ViewModels\MovieFormViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -643,6 +658,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911220219005_AddDrivingLicenseToApplicationUser.resx">
       <DependentUpon>201911220219005_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004300502028_AddPhoneNumberToApplicationUser.resx">
+      <DependentUpon>202004300502028_AddPhoneNumberToApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004300510556_RemovePhoneNumberFromApplicationUser.resx">
+      <DependentUpon>202004300510556_RemovePhoneNumberFromApplicationUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202004300601101_AddPhoneToApplicationUser.resx">
+      <DependentUpon>202004300601101_AddPhoneToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

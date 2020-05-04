@@ -363,12 +363,12 @@ namespace FidlyAdvanced2.Controllers
             return false;
         }
 
-        private bool HasPhoneNumber()
+        private bool HasPhone()
         {
             var user = UserManager.FindById(User.Identity.GetUserId());
             if (user != null)
             {
-                return user.PhoneNumber != null;
+                return user.Phone != null;
             }
             return false;
         }

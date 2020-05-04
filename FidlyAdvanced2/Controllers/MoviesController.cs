@@ -57,6 +57,7 @@ namespace FidlyAdvanced2.Controllers
             return View(viewModel);
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Save(Movie movie)

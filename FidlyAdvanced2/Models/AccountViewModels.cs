@@ -3,17 +3,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace FidlyAdvanced2.Models
 {
-    public class ExternalLoginConfirmationViewModel
-    {
-        [Required]
-        [Display(Name = "电子邮件")]
-        public string Email { get; set; }
-
-        [Required]
-        [Display(Name = "Driving License")]
-        public string DrivingLicense { get; set; }
-    }
-
     public class ExternalLoginListViewModel
     {
         public string ReturnUrl { get; set; }
@@ -69,8 +58,13 @@ namespace FidlyAdvanced2.Models
     public class RegisterViewModel
     {
         [Required]
+        [Display(Name = "Phone Number")]
+        public string Phone { get; set; }
+
+        [Required]
         [Display(Name = "驾照")]
         public string DrivingLicense { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "电子邮件")]
